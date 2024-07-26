@@ -20,8 +20,39 @@ class MovieReport(BaseMovieReport):
         to_year: typing.Optional[int] = None,
         categories: typing.List[Category] = None,
     ) -> list:
-        query = ""
-        params = {}
+        query ="""
+        SELECT
+            movie.title,
+            movie.year_of_production,
+            category.name AS category_name,
+            COUNT(actor.id) AS number_of_actors,
+            GROUP_CONCAT(actor.name, ', ') AS actor_names
+        FROM
+            movies movie
+        JOIN
+            categories category ON movie.category_id = category.id
+        LEFT JOIN
+            movie_actors movie_actor ON movie.id = movie_actor.movie_id
+        LEFT JOIN
+            actors actor ON movie_actor.actor_id = actor.id
+        WHERE
+            (:from_year IS NULL OR movie.year_of_production >= :from_year) AND
+            (:to_year IS NULL OR movie.year_of_production <= :to_year) AND
+            (:categories IS NULL OR category.id IN :categories)
+        GROUP BY
+            movie.id
+        ORDER BY
+            movie.year_of_production DESC,
+            movie.title ASC
+        LIMIT :limit
+        """
+
+        params = {
+            "limit": limit,
+            "from_year": from_year,
+            "to_year": to_year,
+            "categories": tuple(category.id for category in categories) if categories else None
+        }
 
         return self.repository.session.execute(query, params).fetchall()
 
