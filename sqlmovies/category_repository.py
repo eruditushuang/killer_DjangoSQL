@@ -14,19 +14,29 @@ class CategoryRepository(BaseCategoryRepository):
         self.session = sessionmaker(bind=self.engine)()
 
     def count(self) -> int:
-        pass
+        return self.session.query(Category).count()
 
     def find(self, pk: int) -> typing.Optional[Category]:
-        pass
+        return self.session.query(Category).filter(Category.id == pk).first()  # pk is category id
 
     def find_by_name(self, name: str) -> typing.Optional[Category]:
-        pass
+        return self.session.query(Category).filter(Category.name == name).first()
 
     def find_all(self) -> typing.List[Category]:
-        pass
+        return self.session.query(Category).all()
 
     def save(self, category: Category) -> bool:
-        pass
+        try:
+            existing_category = self.find(category.id)
+            if existing_category:
+                existing_category.name = category.name
+            else:
+                self.session.add(category)
+            self.session.commit()
+            return True
+        except Exception as e:
+            self.session.rollback()
+            return False
 
     def _create(self, *args, **kwargs) -> Category:
         """Helper method for instantiating object from single database row.

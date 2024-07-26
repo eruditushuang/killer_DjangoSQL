@@ -24,3 +24,4 @@ class MovieReport(BaseMovieReport):
         params = {}
 
         return self.repository.session.execute(query, params).fetchall()
+
