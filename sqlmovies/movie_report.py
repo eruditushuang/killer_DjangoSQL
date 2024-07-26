@@ -20,7 +20,7 @@ class MovieReport(BaseMovieReport):
         to_year: typing.Optional[int] = None,
         categories: typing.List[Category] = None,
     ) -> list:
-        query ="""
+        query = """
         SELECT
             movie.title,
             movie.year_of_production,
