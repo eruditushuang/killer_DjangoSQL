@@ -14,13 +14,13 @@ class MovieReport(BaseMovieReport):
         self.repository = repository
 
     def get(
-        self,
-        limit: int = 3,
-        from_year: typing.Optional[int] = None,
-        to_year: typing.Optional[int] = None,
-        categories: typing.List[Category] = None,
+            self,
+            limit: int = 3,
+            from_year: typing.Optional[int] = None,
+            to_year: typing.Optional[int] = None,
+            categories: typing.List[Category] = None,
     ) -> list:
-        query ="""
+        query = """
         SELECT
             movie.title,
             movie.year_of_production,
@@ -36,23 +36,17 @@ class MovieReport(BaseMovieReport):
         LEFT JOIN
             actors actor ON movie_actor.actor_id = actor.id
         WHERE
-            (:from_year IS NULL OR movie.year_of_production >= :from_year) AND
-            (:to_year IS NULL OR movie.year_of_production <= :to_year) AND
-            (:categories IS NULL OR category.id IN :categories)
+            (? IS NULL OR movie.year_of_production >= :from_year) AND
+            (? IS NULL OR movie.year_of_production <= :to_year) AND
+            (? IS NULL OR category.id IN :categories)
         GROUP BY
             movie.id
         ORDER BY
             movie.year_of_production DESC,
             movie.title ASC
-        LIMIT :limit
+        LIMIT ?
         """
 
-        params = {
-            "limit": limit,
-            "from_year": from_year,
-            "to_year": to_year,
-            "categories": tuple(category.id for category in categories) if categories else None
-        }
+        params = (from_year, to_year, tuple(category.id for category in categories) if categories else None, limit)
 
         return self.repository.session.execute(query, params).fetchall()
-

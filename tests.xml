@@ -1,305 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="9" skipped="0" tests="45" time="2.557" timestamp="2023-02-04T02:39:53.422246" hostname="task-pycharm-c-9793-17-849f5fdddb-dvb52"><testcase classname="tests.test_category_repository.TestCategoryRepositoryEmpty" name="test_count" file="tests/test_category_repository.py" line="18" time="0.091"><failure message="teamcity.diff_tools.EqualsAssertionError:  :: None != 0">self = &lt;tests.test_category_repository.TestCategoryRepositoryEmpty testMethod=test_count&gt;
-first = None, second = 0, msg = None
-
-    def _patched_equals(self, first, second, msg=None):
-        try:
-&gt;           old(self, first, second, msg)
-
-/projector/ide/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py:32: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-self = &lt;tests.test_category_repository.TestCategoryRepositoryEmpty testMethod=test_count&gt;
-first = None, second = 0, msg = None
-
-    def assertEqual(self, first, second, msg=None):
-        """Fail if the two objects are unequal as determined by the '=='
-           operator.
-        """
-        assertion_func = self._getAssertEqualityFunc(first, second)
-&gt;       assertion_func(first, second, msg=msg)
-
-/usr/local/lib/python3.8/unittest/case.py:912: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-self = &lt;tests.test_category_repository.TestCategoryRepositoryEmpty testMethod=test_count&gt;
-first = None, second = 0, msg = 'None != 0'
-
-    def _baseAssertEqual(self, first, second, msg=None):
-        """The default assertEqual implementation, not type specific."""
-        if not first == second:
-            standardMsg = '%s != %s' % _common_shorten_repr(first, second)
-            msg = self._formatMessage(msg, standardMsg)
-&gt;           raise self.failureException(msg)
-E           AssertionError: None != 0
-
-/usr/local/lib/python3.8/unittest/case.py:905: AssertionError
-
-During handling of the above exception, another exception occurred:
-
-self = &lt;tests.test_category_repository.TestCategoryRepositoryEmpty testMethod=test_count&gt;
-
-    def test_count(self):
-&gt;       self.assertEqual(self.repo.count(), 0)
-
-tests/test_category_repository.py:20: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-self = &lt;tests.test_category_repository.TestCategoryRepositoryEmpty testMethod=test_count&gt;
-first = None, second = 0, msg = None
-
-    def _patched_equals(self, first, second, msg=None):
-        try:
-            old(self, first, second, msg)
-            return
-        except AssertionError as native_error:
-            if not test_filter or test_filter(self):
-                error = EqualsAssertionError(first, second, msg)
-                if error.can_be_serialized():
-&gt;                   raise error
-E                   teamcity.diff_tools.EqualsAssertionError:  :: None != 0
-
-/projector/ide/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py:38: EqualsAssertionError</failure></testcase><testcase classname="tests.test_category_repository.TestCategoryRepositoryEmpty" name="test_find_all" file="tests/test_category_repository.py" line="11" time="0.024"><failure message="teamcity.diff_tools.EqualsAssertionError:  :: None != []">self = &lt;tests.test_category_repository.TestCategoryRepositoryEmpty testMethod=test_find_all&gt;
-first = None, second = [], msg = None
-
-    def _patched_equals(self, first, second, msg=None):
-        try:
-&gt;           old(self, first, second, msg)
-
-/projector/ide/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py:32: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-self = &lt;tests.test_category_repository.TestCategoryRepositoryEmpty testMethod=test_find_all&gt;
-first = None, second = [], msg = None
-
-    def assertEqual(self, first, second, msg=None):
-        """Fail if the two objects are unequal as determined by the '=='
-           operator.
-        """
-        assertion_func = self._getAssertEqualityFunc(first, second)
-&gt;       assertion_func(first, second, msg=msg)
-
-/usr/local/lib/python3.8/unittest/case.py:912: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-self = &lt;tests.test_category_repository.TestCategoryRepositoryEmpty testMethod=test_find_all&gt;
-first = None, second = [], msg = 'None != []'
-
-    def _baseAssertEqual(self, first, second, msg=None):
-        """The default assertEqual implementation, not type specific."""
-        if not first == second:
-            standardMsg = '%s != %s' % _common_shorten_repr(first, second)
-            msg = self._formatMessage(msg, standardMsg)
-&gt;           raise self.failureException(msg)
-E           AssertionError: None != []
-
-/usr/local/lib/python3.8/unittest/case.py:905: AssertionError
-
-During handling of the above exception, another exception occurred:
-
-self = &lt;tests.test_category_repository.TestCategoryRepositoryEmpty testMethod=test_find_all&gt;
-
-    def test_find_all(self):
-&gt;       self.assertEqual(self.repo.find_all(), [])
-
-tests/test_category_repository.py:13: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-self = &lt;tests.test_category_repository.TestCategoryRepositoryEmpty testMethod=test_find_all&gt;
-first = None, second = [], msg = None
-
-    def _patched_equals(self, first, second, msg=None):
-        try:
-            old(self, first, second, msg)
-            return
-        except AssertionError as native_error:
-            if not test_filter or test_filter(self):
-                error = EqualsAssertionError(first, second, msg)
-                if error.can_be_serialized():
-&gt;                   raise error
-E                   teamcity.diff_tools.EqualsAssertionError:  :: None != []
-
-/projector/ide/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py:38: EqualsAssertionError</failure></testcase><testcase classname="tests.test_category_repository.TestCategoryRepositoryEmpty" name="test_non_existing" file="tests/test_category_repository.py" line="14" time="0.008" /><testcase classname="tests.test_category_repository.TestCategoryRepository" name="test_count" file="tests/test_category_repository.py" line="48" time="0.071"><failure message="teamcity.diff_tools.EqualsAssertionError:  :: 21 != None">self = &lt;tests.test_category_repository.TestCategoryRepository testMethod=test_count&gt;
-first = 21, second = None, msg = None
-
-    def _patched_equals(self, first, second, msg=None):
-        try:
-&gt;           old(self, first, second, msg)
-
-/projector/ide/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py:32: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-self = &lt;tests.test_category_repository.TestCategoryRepository testMethod=test_count&gt;
-first = 21, second = None, msg = None
-
-    def assertEqual(self, first, second, msg=None):
-        """Fail if the two objects are unequal as determined by the '=='
-           operator.
-        """
-        assertion_func = self._getAssertEqualityFunc(first, second)
-&gt;       assertion_func(first, second, msg=msg)
-
-/usr/local/lib/python3.8/unittest/case.py:912: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-self = &lt;tests.test_category_repository.TestCategoryRepository testMethod=test_count&gt;
-first = 21, second = None, msg = '21 != None'
-
-    def _baseAssertEqual(self, first, second, msg=None):
-        """The default assertEqual implementation, not type specific."""
-        if not first == second:
-            standardMsg = '%s != %s' % _common_shorten_repr(first, second)
-            msg = self._formatMessage(msg, standardMsg)
-&gt;           raise self.failureException(msg)
-E           AssertionError: 21 != None
-
-/usr/local/lib/python3.8/unittest/case.py:905: AssertionError
-
-During handling of the above exception, another exception occurred:
-
-self = &lt;tests.test_category_repository.TestCategoryRepository testMethod=test_count&gt;
-
-    def test_count(self):
-        dataset = self.fixtures["category"]
-        category = self.repo.count()
-&gt;       self.assertEqual(len(dataset), category)
-
-tests/test_category_repository.py:52: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-self = &lt;tests.test_category_repository.TestCategoryRepository testMethod=test_count&gt;
-first = 21, second = None, msg = None
-
-    def _patched_equals(self, first, second, msg=None):
-        try:
-            old(self, first, second, msg)
-            return
-        except AssertionError as native_error:
-            if not test_filter or test_filter(self):
-                error = EqualsAssertionError(first, second, msg)
-                if error.can_be_serialized():
-&gt;                   raise error
-E                   teamcity.diff_tools.EqualsAssertionError:  :: 21 != None
-
-/projector/ide/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py:38: EqualsAssertionError</failure></testcase><testcase classname="tests.test_category_repository.TestCategoryRepository" name="test_find" file="tests/test_category_repository.py" line="53" time="0.115"><failure message="AssertionError: None is not an instance of &lt;class 'sqlmovies.models.category.Category'&gt;">self = &lt;tests.test_category_repository.TestCategoryRepository testMethod=test_find&gt;
-
-    def test_find(self):
-        dataset = self.fixtures["category"]
-        pk = 1
-        category = self.repo.find(pk)
-        for fixture in dataset:
-            if fixture["id"] == pk:
-&gt;               self.assertIsInstance(category, Category)
-E               AssertionError: None is not an instance of &lt;class 'sqlmovies.models.category.Category'&gt;
-
-tests/test_category_repository.py:60: AssertionError</failure></testcase><testcase classname="tests.test_category_repository.TestCategoryRepository" name="test_find_all" file="tests/test_category_repository.py" line="79" time="0.051"><failure message="TypeError: 'NoneType' object is not iterable">self = &lt;tests.test_category_repository.TestCategoryRepository testMethod=test_find_all&gt;
-
-    def test_find_all(self):
-        dataset = self.fixtures["category"]
-        categories = self.repo.find_all()
-    
-&gt;       for category, fixture in zip(categories, dataset):
-E       TypeError: 'NoneType' object is not iterable
-
-tests/test_category_repository.py:84: TypeError</failure></testcase><testcase classname="tests.test_category_repository.TestCategoryRepository" name="test_find_by_name" file="tests/test_category_repository.py" line="66" time="0.050"><failure message="AssertionError: None is not an instance of &lt;class 'sqlmovies.models.category.Category'&gt;">self = &lt;tests.test_category_repository.TestCategoryRepository testMethod=test_find_by_name&gt;
-
-    def test_find_by_name(self):
-        dataset = self.fixtures["category"]
-        name = "Comedy"
-        category = self.repo.find_by_name(name)
-        for fixture in dataset:
-            if fixture["name"] == name:
-&gt;               self.assertIsInstance(category, Category)
-E               AssertionError: None is not an instance of &lt;class 'sqlmovies.models.category.Category'&gt;
-
-tests/test_category_repository.py:73: AssertionError</failure></testcase><testcase classname="tests.test_category_repository.TestCategoryRepository" name="test_save_existing" file="tests/test_category_repository.py" line="36" time="0.055"><failure message="AttributeError: 'NoneType' object has no attribute 'name'">self = &lt;tests.test_category_repository.TestCategoryRepository testMethod=test_save_existing&gt;
-
-    def test_save_existing(self):
-        category = Category("Action", 1)
-        self.assertEqual(category.name, "Action")
-        self.repo.save(category)
-    
-        category.name = "Action CHANGED"
-        self.repo.save(category)
-    
-        found_cat = self.repo.find_by_name("Action CHANGED")
-&gt;       self.assertEqual(found_cat.name, "Action CHANGED")
-E       AttributeError: 'NoneType' object has no attribute 'name'
-
-tests/test_category_repository.py:46: AttributeError</failure></testcase><testcase classname="tests.test_category_repository.TestCategoryRepository" name="test_save_new" file="tests/test_category_repository.py" line="30" time="0.056"><failure message="teamcity.diff_tools.EqualsAssertionError:  :: None != 22">self = &lt;tests.test_category_repository.TestCategoryRepository testMethod=test_save_new&gt;
-first = None, second = 22, msg = None
-
-    def _patched_equals(self, first, second, msg=None):
-        try:
-&gt;           old(self, first, second, msg)
-
-/projector/ide/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py:32: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-self = &lt;tests.test_category_repository.TestCategoryRepository testMethod=test_save_new&gt;
-first = None, second = 22, msg = None
-
-    def assertEqual(self, first, second, msg=None):
-        """Fail if the two objects are unequal as determined by the '=='
-           operator.
-        """
-        assertion_func = self._getAssertEqualityFunc(first, second)
-&gt;       assertion_func(first, second, msg=msg)
-
-/usr/local/lib/python3.8/unittest/case.py:912: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-self = &lt;tests.test_category_repository.TestCategoryRepository testMethod=test_save_new&gt;
-first = None, second = 22, msg = 'None != 22'
-
-    def _baseAssertEqual(self, first, second, msg=None):
-        """The default assertEqual implementation, not type specific."""
-        if not first == second:
-            standardMsg = '%s != %s' % _common_shorten_repr(first, second)
-            msg = self._formatMessage(msg, standardMsg)
-&gt;           raise self.failureException(msg)
-E           AssertionError: None != 22
-
-/usr/local/lib/python3.8/unittest/case.py:905: AssertionError
-
-During handling of the above exception, another exception occurred:
-
-self = &lt;tests.test_category_repository.TestCategoryRepository testMethod=test_save_new&gt;
-
-    def test_save_new(self):
-        category = Category("Western")
-        self.assertEqual(category.id, None)
-        self.repo.save(category)
-&gt;       self.assertEqual(category.id, 22)
-
-tests/test_category_repository.py:35: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-self = &lt;tests.test_category_repository.TestCategoryRepository testMethod=test_save_new&gt;
-first = None, second = 22, msg = None
-
-    def _patched_equals(self, first, second, msg=None):
-        try:
-            old(self, first, second, msg)
-            return
-        except AssertionError as native_error:
-            if not test_filter or test_filter(self):
-                error = EqualsAssertionError(first, second, msg)
-                if error.can_be_serialized():
-&gt;                   raise error
-E                   teamcity.diff_tools.EqualsAssertionError:  :: None != 22
-
-/projector/ide/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py:38: EqualsAssertionError</failure></testcase><testcase classname="tests.test_movie_report.TestMovieReport" name="test_get" file="tests/test_movie_report.py" line="77" time="0.052"><failure message="sqlalchemy.exc.ResourceClosedError: This result object does not return rows. It has been closed automatically.">self = &lt;sqlalchemy.engine.result.ResultProxy object at 0x7f6540fe0220&gt;
-
-    def _fetchall_impl(self):
-        try:
-&gt;           return self.cursor.fetchall()
-E           AttributeError: 'NoneType' object has no attribute 'fetchall'
-
-../python/lib/python3.8/site-packages/sqlalchemy/engine/result.py:1230: AttributeError
-
-The above exception was the direct cause of the following exception:
-
-self = &lt;tests.test_movie_report.TestMovieReport testMethod=test_get&gt;
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="0.335" timestamp="2024-07-26T10:53:45.771951" hostname="T14NB900"><testcase classname="tests.test_movie_report.TestMovieReport" name="test_get" file="tests\test_movie_report.py" line="77" time="0.027"><failure message="AttributeError: 'tuple' object has no attribute 'keys'">self = &lt;tests.test_movie_report.TestMovieReport testMethod=test_get&gt;
 
     def test_get(self):
         report = MovieReport(self.repo)
@@ -310,55 +9,34 @@ self = &lt;tests.test_movie_report.TestMovieReport testMethod=test_get&gt;
                 args[-1] = self._convert_to_categories(args[-1])
 &gt;               result = report.get(*args)
 
-tests/test_movie_report.py:85: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-sqlmovies/movie_report.py:26: in get
+tests\test_movie_report.py:85: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+sqlmovies\movie_report.py:52: in get
     return self.repository.session.execute(query, params).fetchall()
-../python/lib/python3.8/site-packages/sqlalchemy/engine/result.py:1288: in fetchall
-    self.connection._handle_dbapi_exception(
-../python/lib/python3.8/site-packages/sqlalchemy/engine/base.py:1514: in _handle_dbapi_exception
-    util.raise_(exc_info[1], with_traceback=exc_info[2])
-../python/lib/python3.8/site-packages/sqlalchemy/util/compat.py:182: in raise_
-    raise exception
-../python/lib/python3.8/site-packages/sqlalchemy/engine/result.py:1284: in fetchall
-    l = self.process_rows(self._fetchall_impl())
-../python/lib/python3.8/site-packages/sqlalchemy/engine/result.py:1232: in _fetchall_impl
-    return self._non_result([], err)
-../python/lib/python3.8/site-packages/sqlalchemy/engine/result.py:1236: in _non_result
-    util.raise_(
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv\Lib\site-packages\sqlalchemy\orm\session.py:1291: in execute
+    return self._connection_for_bind(bind, close_with_result=True).execute(
+.venv\Lib\site-packages\sqlalchemy\engine\base.py:1011: in execute
+    return meth(self, multiparams, params)
+.venv\Lib\site-packages\sqlalchemy\sql\elements.py:298: in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
-    def raise_(
-        exception, with_traceback=None, replace_context=None, from_=False
-    ):
-        r"""implement "raise" with cause support.
-    
-        :param exception: exception to raise
-        :param with_traceback: will call exception.with_traceback()
-        :param replace_context: an as-yet-unsupported feature.  This is
-         an exception object which we are "replacing", e.g., it's our
-         "cause" but we don't want it printed.    Basically just what
-         ``__suppress_context__`` does but we don't want to suppress
-         the enclosing context, if any.  So for now we make it the
-         cause.
-        :param from\_: the cause.  this actually sets the cause and doesn't
-         hope to hide it someday.
-    
-        """
-        if with_traceback is not None:
-            exception = exception.with_traceback(with_traceback)
-    
-        if from_ is not False:
-            exception.__cause__ = from_
-        elif replace_context is not None:
-            # no good solution here, we would like to have the exception
-            # have only the context of replace_context.__context__ so that the
-            # intermediary exception does not change, but we can't figure
-            # that out.
-            exception.__cause__ = replace_context
-    
-        try:
-&gt;           raise exception
-E           sqlalchemy.exc.ResourceClosedError: This result object does not return rows. It has been closed automatically.
+self = &lt;sqlalchemy.engine.base.Connection object at 0x000001DF1C763050&gt;
+elem = &lt;sqlalchemy.sql.elements.TextClause object at 0x000001DF1C763C50&gt;
+multiparams = ((None, None, None, 1),), params = {}
 
-../python/lib/python3.8/site-packages/sqlalchemy/util/compat.py:182: ResourceClosedError</failure></testcase><testcase classname="tests.structure.test_actor_model.StructureTestSuite" name="test_class_exists_actor" file="tests/structure/test_actor_model.py" line="11" time="0.002" /><testcase classname="tests.structure.test_base.StructureTestSuite" name="test_class_exists_basecategoryrepository" file="tests/structure/test_base.py" line="11" time="0.002" /><testcase classname="tests.structure.test_base.StructureTestSuite" name="test_class_exists_basemoviereport" file="tests/structure/test_base.py" line="441" time="0.001" /><testcase classname="tests.structure.test_base.StructureTestSuite" name="test_class_function_exists_basecategoryrepository_count" file="tests/structure/test_base.py" line="21" time="0.001" /><testcase classname="tests.structure.test_base.StructureTestSuite" name="test_class_function_exists_basecategoryrepository_find" file="tests/structure/test_base.py" line="96" time="0.001" /><testcase classname="tests.structure.test_base.StructureTestSuite" name="test_class_function_exists_basecategoryrepository_find_all" file="tests/structure/test_base.py" line="186" time="0.001" /><testcase classname="tests.structure.test_base.StructureTestSuite" name="test_class_function_exists_basecategoryrepository_find_by_name" file="tests/structure/test_base.py" line="261" time="0.001" /><testcase classname="tests.structure.test_base.StructureTestSuite" name="test_class_function_exists_basecategoryrepository_save" file="tests/structure/test_base.py" line="351" time="0.001" /><testcase classname="tests.structure.test_base.StructureTestSuite" name="test_class_function_exists_basemoviereport_get" file="tests/structure/test_base.py" line="451" time="0.001" /><testcase classname="tests.structure.test_base.StructureTestSuite" name="test_class_function_signature_match_basecategoryrepository_count" file="tests/structure/test_base.py" line="44" time="0.002" /><testcase classname="tests.structure.test_base.StructureTestSuite" name="test_class_function_signature_match_basecategoryrepository_find" file="tests/structure/test_base.py" line="119" time="0.002" /><testcase classname="tests.structure.test_base.StructureTestSuite" name="test_class_function_signature_match_basecategoryrepository_find_all" file="tests/structure/test_base.py" line="209" time="0.002" /><testcase classname="tests.structure.test_base.StructureTestSuite" name="test_class_function_signature_match_basecategoryrepository_find_by_name" file="tests/structure/test_base.py" line="284" time="0.002" /><testcase classname="tests.structure.test_base.StructureTestSuite" name="test_class_function_signature_match_basecategoryrepository_save" file="tests/structure/test_base.py" line="374" time="0.002" /><testcase classname="tests.structure.test_base.StructureTestSuite" name="test_class_function_signature_match_basemoviereport_get" file="tests/structure/test_base.py" line="474" time="0.003" /><testcase classname="tests.structure.test_category_model.StructureTestSuite" name="test_class_exists_category" file="tests/structure/test_category_model.py" line="11" time="0.001" /><testcase classname="tests.structure.test_category_repository.StructureTestSuite" name="test_class_exists_categoryrepository" file="tests/structure/test_category_repository.py" line="11" time="0.001" /><testcase classname="tests.structure.test_category_repository.StructureTestSuite" name="test_class_function_exists_categoryrepository___init__" file="tests/structure/test_category_repository.py" line="21" time="0.001" /><testcase classname="tests.structure.test_category_repository.StructureTestSuite" name="test_class_function_exists_categoryrepository_count" file="tests/structure/test_category_repository.py" line="109" time="0.001" /><testcase classname="tests.structure.test_category_repository.StructureTestSuite" name="test_class_function_exists_categoryrepository_find" file="tests/structure/test_category_repository.py" line="182" time="0.001" /><testcase classname="tests.structure.test_category_repository.StructureTestSuite" name="test_class_function_exists_categoryrepository_find_all" file="tests/structure/test_category_repository.py" line="270" time="0.001" /><testcase classname="tests.structure.test_category_repository.StructureTestSuite" name="test_class_function_exists_categoryrepository_find_by_name" file="tests/structure/test_category_repository.py" line="343" time="0.001" /><testcase classname="tests.structure.test_category_repository.StructureTestSuite" name="test_class_function_exists_categoryrepository_save" file="tests/structure/test_category_repository.py" line="431" time="0.001" /><testcase classname="tests.structure.test_category_repository.StructureTestSuite" name="test_class_function_signature_match_categoryrepository___init__" file="tests/structure/test_category_repository.py" line="43" time="0.002" /><testcase classname="tests.structure.test_category_repository.StructureTestSuite" name="test_class_function_signature_match_categoryrepository_count" file="tests/structure/test_category_repository.py" line="131" time="0.002" /><testcase classname="tests.structure.test_category_repository.StructureTestSuite" name="test_class_function_signature_match_categoryrepository_find" file="tests/structure/test_category_repository.py" line="204" time="0.002" /><testcase classname="tests.structure.test_category_repository.StructureTestSuite" name="test_class_function_signature_match_categoryrepository_find_all" file="tests/structure/test_category_repository.py" line="292" time="0.002" /><testcase classname="tests.structure.test_category_repository.StructureTestSuite" name="test_class_function_signature_match_categoryrepository_find_by_name" file="tests/structure/test_category_repository.py" line="365" time="0.002" /><testcase classname="tests.structure.test_category_repository.StructureTestSuite" name="test_class_function_signature_match_categoryrepository_save" file="tests/structure/test_category_repository.py" line="453" time="0.002" /><testcase classname="tests.structure.test_movie_model.StructureTestSuite" name="test_class_exists_movie" file="tests/structure/test_movie_model.py" line="11" time="0.002" /><testcase classname="tests.structure.test_movie_report.StructureTestSuite" name="test_class_exists_moviereport" file="tests/structure/test_movie_report.py" line="11" time="0.001" /><testcase classname="tests.structure.test_movie_report.StructureTestSuite" name="test_class_function_exists_moviereport___init__" file="tests/structure/test_movie_report.py" line="21" time="0.001" /><testcase classname="tests.structure.test_movie_report.StructureTestSuite" name="test_class_function_exists_moviereport_get" file="tests/structure/test_movie_report.py" line="109" time="0.001" /><testcase classname="tests.structure.test_movie_report.StructureTestSuite" name="test_class_function_signature_match_moviereport___init__" file="tests/structure/test_movie_report.py" line="43" time="0.002" /><testcase classname="tests.structure.test_movie_report.StructureTestSuite" name="test_class_function_signature_match_moviereport_get" file="tests/structure/test_movie_report.py" line="131" time="0.003" /></testsuite></testsuites>
+    def _execute_clauseelement(self, elem, multiparams, params):
+        """Execute a sql.ClauseElement object."""
+    
+        if self._has_events or self.engine._has_events:
+            for fn in self.dispatch.before_execute:
+                elem, multiparams, params = fn(self, elem, multiparams, params)
+    
+        distilled_params = _distill_params(multiparams, params)
+        if distilled_params:
+            # ensure we don't retain a link to the view object for keys()
+            # which links to the values, which we don't want to cache
+&gt;           keys = list(distilled_params[0].keys())
+E           AttributeError: 'tuple' object has no attribute 'keys'
+
+.venv\Lib\site-packages\sqlalchemy\engine\base.py:1090: AttributeError</failure></testcase></testsuite></testsuites>
