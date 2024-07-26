@@ -19,17 +19,17 @@ class MovieReport(BaseMovieReport):
     def get(
             self,
             limit: int = 3,
-            from_year: int = None,
-            to_year: int = None,
-            categories: list = None,
+            from_year: typing.Optional[int] = None,
+            to_year: typing.Optional[int] = None,
+            categories: typing.List[Category] = None,
     ) -> list:
 
         query = self.repository.session.query(Movie)
-
         if from_year is not None:
             query = query.filter(Movie.year_of_production >= from_year)
         if to_year is not None:
             query = query.filter(Movie.year_of_production <= to_year)
         if Category is not None:
             query = query.join(Category).filter(Category.id.in_([c.id for c in categories]))
+
         return query
