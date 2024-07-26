@@ -1,5 +1,8 @@
 import typing
 
+from sqlalchemy.orm import Session
+
+from . import Movie
 from .base import BaseMovieReport
 from .category_repository import CategoryRepository
 from .models import Category
@@ -16,37 +19,17 @@ class MovieReport(BaseMovieReport):
     def get(
             self,
             limit: int = 3,
-            from_year: typing.Optional[int] = None,
-            to_year: typing.Optional[int] = None,
-            categories: typing.List[Category] = None,
+            from_year: int = None,
+            to_year: int = None,
+            categories: list = None,
     ) -> list:
-        query = """
-        SELECT
-            movie.title,
-            movie.year_of_production,
-            category.name AS category_name,
-            COUNT(actor.id) AS number_of_actors,
-            GROUP_CONCAT(actor.name, ', ') AS actor_names
-        FROM
-            movies movie
-        JOIN
-            categories category ON movie.category_id = category.id
-        LEFT JOIN
-            movie_actors movie_actor ON movie.id = movie_actor.movie_id
-        LEFT JOIN
-            actors actor ON movie_actor.actor_id = actor.id
-        WHERE
-            (? IS NULL OR movie.year_of_production >= :from_year) AND
-            (? IS NULL OR movie.year_of_production <= :to_year) AND
-            (? IS NULL OR category.id IN :categories)
-        GROUP BY
-            movie.id
-        ORDER BY
-            movie.year_of_production DESC,
-            movie.title ASC
-        LIMIT ?
-        """
 
-        params = (from_year, to_year, tuple(category.id for category in categories) if categories else None, limit)
+        query = self.repository.session.query(Movie)
 
-        return self.repository.session.execute(query, params).fetchall()
+        if from_year is not None:
+            query = query.filter(Movie.year_of_production >= from_year)
+        if to_year is not None:
+            query = query.filter(Movie.year_of_production <= to_year)
+        if Category is not None:
+            query = query.join(Category).filter(Category.id.in_([c.id for c in categories]))
+        return query
